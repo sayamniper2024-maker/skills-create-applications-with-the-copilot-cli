@@ -1,4 +1,4 @@
-const { parseNumbers, add, sub, mul, div } = require('../calculator');
+const { parseNumbers, add, sub, mul, div, modulo, power, squareRoot } = require('../calculator');
 
 describe('Calculator functions', () => {
   test('addition: 2 + 3 = 5', () => {
@@ -35,6 +35,35 @@ describe('Calculator functions', () => {
 
   test('division by zero throws', () => {
     expect(() => div([10, 0])).toThrow(/Division by zero/);
+  });
+
+  // New tests for extended operations
+  test('modulo: 5 % 2 = 1', () => {
+    expect(modulo([5, 2])).toBe(1);
+  });
+
+  test('modulo with floats: 5.5 % 2 = 1.5', () => {
+    expect(modulo([5.5, 2])).toBeCloseTo(1.5);
+  });
+
+  test('modulo by zero throws', () => {
+    expect(() => modulo([5, 0])).toThrow(/Modulo by zero/);
+  });
+
+  test('power: 2 ^ 3 = 8', () => {
+    expect(power([2, 3])).toBe(8);
+  });
+
+  test('power chaining: 2 ^ 3 ^ 2 = (2^3)^2 = 64', () => {
+    expect(power([2, 3, 2])).toBe(64);
+  });
+
+  test('squareRoot: sqrt(16) = 4', () => {
+    expect(squareRoot(16)).toBe(4);
+  });
+
+  test('squareRoot of negative number throws', () => {
+    expect(() => squareRoot(-4)).toThrow(/Square root of negative number/);
   });
 
   test('parseNumbers: rejects non-number', () => {
