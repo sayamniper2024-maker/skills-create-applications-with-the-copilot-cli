@@ -172,12 +172,3 @@ module.exports = {
   main,
 };
 
-// Export functions for unit testing
-module.exports = {
-  parseNumbers,
-  add,
-  sub,
-  mul,
-  div,
-  main,
-};
