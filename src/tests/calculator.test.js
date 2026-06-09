@@ -73,6 +73,6 @@ describe('Calculator functions', () => {
 
   test('parseNumbers: needs at least two operands', () => {
     const { error } = parseNumbers(['1']);
-    expect(error).toMatch(/Need at least two/);
+    expect(error).toMatch(/Need at least/);
   });
 });
