@@ -124,3 +124,13 @@ function main() {
 }
 
 if (require.main === module) main();
+
+// Export functions for unit testing
+module.exports = {
+  parseNumbers,
+  add,
+  sub,
+  mul,
+  div,
+  main,
+};
